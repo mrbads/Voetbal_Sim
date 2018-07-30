@@ -42,13 +42,17 @@ class Manager(object):
         print('[1] Next game \n[2] Team \n[3] Board \n[4] Calender \n[5] Quit')
         option = int(input('Your choice: '))
         if option == 1:
-            match = self.fixtures[0]
-            home = Club(match[0])
-            away = Club(match[1])
-            teams = [home, away]
-            result = Simulation.simulate(teams)
-            self.played.append([self.fixtures[0], result])
-            self.fixtures.pop(0)
+            if self.fixtures != []:
+                match = self.fixtures[0]
+                print(match)
+                home = Club(match[0])
+                away = Club(match[1])
+                teams = [home, away]
+                result = Simulation.simulate(teams)
+                self.played.append([self.fixtures[0], result])
+                self.fixtures.pop(0)
+            else:
+                print('End of the season')
             self.menu()
         elif option == 2:
             pass
@@ -63,10 +67,15 @@ class Manager(object):
     def calender(self, club):
         fixtures = self.fixtures
         played = self.played
-        for round in played:
-            print(round)
-        for round in fixtures:
-            print(round)
+        for i in range(0, int(len(fixtures)+len(played))):
+            if i in range(0, len(played)):
+                print('Round {}: {}'.format(i+1, played[i]))
+            else:
+                print('Round {}: {}'.format(i+1, fixtures[i-len(played)]))
+        # for round in played:
+        #     print(round)
+        # for round in fixtures:
+        #     print(round)
 
 
         self.menu()
