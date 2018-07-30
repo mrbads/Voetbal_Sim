@@ -61,10 +61,13 @@ class Simulation(object):
 
         if result == [1]:
             Simulation.win(home.name)
+            return 'home win'
         elif result == [2]:
             Simulation.draw()
+            return 'draw'
         elif result == [3]:
             Simulation.loss(home.name)
+            return 'home loss'
 
     def win(arg):
         print('{} Wins!'.format(arg))

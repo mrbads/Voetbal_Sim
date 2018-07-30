@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from club import Club
-import sim
+from sim import Simulation
 from roundrobin import RoundRobinScheduler
 
 # manager file
@@ -16,6 +16,7 @@ class Manager(object):
         self.teams = teams
         self.league = league
         self.fixtures = []
+        self.played = []
         self._generate_fixtures()
 
     def _generate_fixtures(self):
@@ -41,10 +42,12 @@ class Manager(object):
         print('[1] Next game \n[2] Team \n[3] Board \n[4] Calender \n[5] Quit')
         option = int(input('Your choice: '))
         if option == 1:
-            print(self.fixtures[0])
-            # Simulate the game
-            played = []
-            played.append(self.fixtures[0])
+            match = self.fixtures[0]
+            home = Club(match[0])
+            away = Club(match[1])
+            teams = [home, away]
+            result = Simulation.simulate(teams)
+            self.played.append([self.fixtures[0], result])
             self.fixtures.pop(0)
             self.menu()
         elif option == 2:
@@ -59,7 +62,11 @@ class Manager(object):
 
     def calender(self, club):
         fixtures = self.fixtures
-        for round in enumerate(fixtures):
-            print('Round: {0}, {1}'.format(round[0]+1, round[1]))
+        played = self.played
+        for round in played:
+            print(round)
+        for round in fixtures:
+            print(round)
+
 
         self.menu()
