@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sim
 from roundrobin import RoundRobinScheduler
 
 # manager file
@@ -13,6 +14,17 @@ class Manager(object):
         self.club = club
         self.teams = teams
         self.league = league
+        self.played = []
+
+    def fixtures(self):
+        fixtures = []
+        RR = RoundRobinScheduler(self.teams, 2)
+        schedule = RR.generate_schedule()
+        for round in schedule:
+            for match in round:
+                if self.club in match:
+                    fixtures.append(match)
+        return fixtures
 
     def menu(self):
         # overview of all possible options:
@@ -37,11 +49,8 @@ class Manager(object):
         pass
 
     def calender(self, club):
-        RR = RoundRobinScheduler(self.teams, 2)
-        schedule = RR.generate_schedule()
-        for round in schedule:
-            for match in round:
-                if club in match:
-                    print(match)
+        fixtures = self.fixtures()
+        for round in enumerate(fixtures):
+            print('Round: {0}, {1}'.format(round[0], round[1]))
 
         self.menu()
