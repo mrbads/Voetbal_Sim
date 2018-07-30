@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 
 import club
-import sim
+from sim import Simulation
 from manager import Manager
 
-clubs = [['ADO Den Haag', 69],['Ajax', 76],['AZ', 73],['de Graafschap', 60],['Excelsior', 68],['FC Emmen', 60],
-['FC Groningen', 68],['FC Utrecht', 72],['Feyenoord', 76],['Fortuna Sittard', 60],['Heracles Almelo', 69],
-['NAC Breda', 67],['PEC Zwolle', 70],['PSV', 75],['SC Heerenveen', 70],['Vitesse', 71],['VVV-Venlo', 67],
-['Willem II', 68]]
+clubs = ['ADO Den Haag','Ajax','AZ','de Graafschap','Excelsior','FC Emmen','FC Groningen','FC Utrecht','Feyenoord',
+        'Fortuna Sittard','Heracles Almelo','NAC Breda','PEC Zwolle','PSV','SC Heerenveen','Vitesse','VVV-Venlo','Willem II']
 
 leagues = [
 ['Eredivisie',
@@ -27,14 +25,14 @@ def welcome():
 
 def menu():
     print('[1] New Game \n[2] Career mode \n[3] Info \n[4] Quit')
-    option = int(input('your choice:'))
+    option = int(input('your choice: '))
     if option == 1:
         print('New Game')
         teams = selection()
         return(teams)
     elif option == 2:
         print('Career mode')
-        manager = Manager(['Ajax', 76], clubs, leagues[0])
+        manager = Manager('Ajax', clubs, leagues[0])
         manager.menu()
     elif option == 3:
         print('Info')
@@ -46,22 +44,22 @@ def menu():
 def selection():
     print('Choose your team:')
     for team in range(0,len(clubs)):
-        print('[{}] - {}'.format(team, clubs[team][0]))
+        print('[{}] - {}'.format(team, clubs[team]))
     option = int(input())
-    home = club.Club(clubs[option][0],clubs[option][1])
-    print(home.name, home.rating)
+    home = club.Club(clubs[option])
+    print(home.name)
     print('Choose your opponent:')
     for team in range(0,len(clubs)):
-        print('[{}] - {}'.format(team, clubs[team][0]))
+        print('[{}] - {}'.format(team, clubs[team]))
     option = int(input())
-    away = club.Club(clubs[option][0],clubs[option][1])
-    print(away.name, away.rating)
+    away = club.Club(clubs[option])
+    print(away.name)
     return(home, away)
 
 def main():
     welcome()
     teams = menu()
-    sim.Simulation.simulate(teams)
+    Simulation.simulate(teams)
     pass
 
 if __name__ == '__main__':

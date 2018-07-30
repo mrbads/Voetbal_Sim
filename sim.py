@@ -20,8 +20,8 @@ class Simulation(object):
         # simulate the game
         home = teams[0]
         away = teams[1]
-        home.rating = home.rating + Simulation.home_adv
-        diff = home.rating - away.rating
+        home.overall = home.overall + Simulation.home_adv
+        diff = home.overall - away.overall
         # print(diff)
         # Different states the differential can take:
         # -   < -10             5%     10%     85%
