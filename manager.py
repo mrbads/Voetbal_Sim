@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import main
+from roundrobin import RoundRobinScheduler
 
 # manager file
 # -   Board requests
@@ -8,11 +8,13 @@ import main
 
 class Manager(object):
     """docstring for Manager."""
-    def __init__(self, arg):
+    def __init__(self, club, teams, league):
         super(Manager, self).__init__()
-        self.arg = arg
+        self.club = club
+        self.teams = teams
+        self.league = league
 
-    def menu():
+    def menu(self):
         # overview of all possible options:
         # -   next game
         # -   team management
@@ -29,7 +31,17 @@ class Manager(object):
         elif option == 3:
             pass
         elif option == 4:
-            pass
+            self.calender(self.club)
         else:
             main.menu()
         pass
+
+    def calender(self, club):
+        RR = RoundRobinScheduler(self.teams, 2)
+        schedule = RR.generate_schedule()
+        for round in schedule:
+            for match in round:
+                if club in match:
+                    print(match)
+
+        self.menu()

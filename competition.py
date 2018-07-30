@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-import itertools
-import random
+from roundrobin import RoundRobinScheduler
 
 # Competition File
 # -   Standings
@@ -30,99 +29,14 @@ class Competition(object):
     def roster(league):
         print(league[0])
         teams = []
-        count = 0
-        fixtures = {}
         league = league[1]
         for club in league:
             teams.append(club[0])
         if len(teams) % 2:
             teams.append('Day off')
 
-        matches = itertools.permutations(teams, r=2)
-        matches = list(matches)
-
-        for round in range(0, int(len(teams)-1)*2):
-            fixtures['Round %s' % round] = []
-
-        # home_teams = random.sample(teams, k=int(len(teams)/2))
-
-        for r,g in fixtures.items():
-            count += 1
-            print(r)
-            print('all possibilities: {}'.format(len(matches)))
-            if count % 2:
-                # print('odd')
-                home_teams = random.sample(teams, k=int(len(teams)/2))
-                # print(home_teams)
-                used = home_teams.copy()
-                for team in home_teams:
-                    options = []
-                    for match in matches:
-                        if match[0] == team:
-                            options.append(match)
-                    print(options)
-                    pick = random.choice(options)
-                    if g == []:
-                        for i in range(0, len(options)):
-                            if pick[1] not in used:
-                                print('pick: {}'.format(pick))
-                                g.append(pick)
-                                used.append(pick[1])
-                                matches.remove(pick)
-                                break
-                            else:
-                                pick = random.choice(options)
-                    else:
-                        print(used)
-                        for i in range(0, len(options)):
-                            if pick[1] not in used:
-                                print('pick: {}'.format(pick))
-                                g.append(pick)
-                                used.append(pick[1])
-                                matches.remove(pick)
-                                break
-                            else:
-                                options.remove(pick)
-                                pick = random.choice(options)
-            else:
-                # print('even')
-                away_teams = home_teams
-                # print(away_teams)
-                used = away_teams.copy()
-                for team in away_teams:
-                    options = []
-                    for match in matches:
-                        if match[1] == team:
-                            options.append(match)
-                    print(options)
-                    pick = random.choice(options)
-                    if g == []:
-                        for i in range(0, len(options)):
-                            if pick[0] not in used:
-                                print('pick: {}'.format(pick))
-                                g.append(pick)
-                                used.append(pick[0])
-                                matches.remove(pick)
-                                break
-                            else:
-                                pick = random.choice(options)
-                    else:
-                        print(used)
-                        for i in range(0, len(options)):
-                            if pick[0] not in used:
-                                print('pick: {}'.format(pick))
-                                g.append(pick)
-                                used.append(pick[0])
-                                matches.remove(pick)
-                                break
-                            else:
-                                options.remove(pick)
-                                pick = random.choice(options)
-
-
-        # print('-------------')
-        # for r,g in fixtures.items():
-        #     print('{} {} {}\n'.format(r,g,len(g)))
+        RR = RoundRobinScheduler(teams, 2)
+        return RR.generate_schedule()
 
 if __name__ == '__main__':
     Competition.roster(leagues[0])

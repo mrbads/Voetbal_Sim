@@ -2,12 +2,24 @@
 
 import club
 import sim
-import manager
+from manager import Manager
 
 clubs = [['ADO Den Haag', 69],['Ajax', 76],['AZ', 73],['de Graafschap', 60],['Excelsior', 68],['FC Emmen', 60],
 ['FC Groningen', 68],['FC Utrecht', 72],['Feyenoord', 76],['Fortuna Sittard', 60],['Heracles Almelo', 69],
 ['NAC Breda', 67],['PEC Zwolle', 70],['PSV', 75],['SC Heerenveen', 70],['Vitesse', 71],['VVV-Venlo', 67],
 ['Willem II', 68]]
+
+leagues = [
+['Eredivisie',
+[['ADO Den Haag', 69],['Ajax', 76],['AZ', 73],['de Graafschap', 60],['Excelsior', 68],
+['FC Emmen', 60],['FC Groningen', 68],['FC Utrecht', 72],['Feyenoord', 76],['Fortuna Sittard', 60],['Heracles Almelo', 69],
+['NAC Breda', 67],['PEC Zwolle', 70],['PSV', 75],['SC Heerenveen', 70],['Vitesse', 71],['VVV-Venlo', 67],['Willem II', 68]]],
+['Eerste Divisie',
+[['Almere City FC', 60],['FC Den Bosch', 60],['FC Dordrecht', 60],['FC Eindhoven', 60],['FC Twente', 60],['FC Volendam', 60],
+['Go Ahead Eagles', 60],['Helmond Sport', 60],['Jong Ajax', 60],['Jong AZ', 60],['Jong FC Utrecht', 60],['Jong PSV', 60],
+['MVV Maastricht', 60],['N.E.C.', 60],['RKC Waalwijk', 60],['Roda JC', 60],['SC Cambuur', 60],['Sparta Rotterdam', 60],
+['Telstar', 60],['TOP Oss', 60]]]
+]
 
 def welcome():
     print('welcome to Voetbal_Sim')
@@ -22,7 +34,8 @@ def menu():
         return(teams)
     elif option == 2:
         print('Career mode')
-        manager.Manager.menu()
+        manager = Manager(['Ajax', 76], clubs, leagues[0])
+        manager.menu()
     elif option == 3:
         print('Info')
         print('Voetbal_Sim is a football simulator based upon fifa career mode.')
