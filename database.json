@@ -1,0 +1,42 @@
+{"leagues":[
+  {"Eredivisie":[
+    {"club":"ADO Den Haag", "overall":69},
+    {"club":"Ajax", "overall":76},
+    {"club":"AZ", "overall":73},
+    {"club":"de Graafschap", "overall":60},
+    {"club":"Excelsior", "overall":68},
+    {"club":"FC Emmen", "overall":60},
+    {"club":"FC Groningen", "overall":68},
+    {"club":"FC Utrecht", "overall":72},
+    {"club":"Feyenoord", "overall":76},
+    {"club":"Fortuna Sittard", "overall":60},
+    {"club":"Heracles Almelo", "overall":69},
+    {"club":"NAC Breda", "overall":67},
+    {"club":"PEC Zwolle", "overall":70},
+    {"club":"PSV", "overall":75},
+    {"club":"SC Heerenveen", "overall":70},
+    {"club":"Vitesse", "overall":71},
+    {"club":"VVV-Venlo", "overall":67},
+    {"club":"Willem II", "overall":68}
+    ]},
+    {"Eerste Divisie":[
+      {"club":"Almere City FC", "overall":60},
+      {"club":"FC Den Bosch", "overall":60},
+      {"club":"FC Dordrecht", "overall":60},
+      {"club":"FC Eindhoven", "overall":60},
+      {"club":"FC Twente", "overall":60},
+      {"club":"FC Volendam", "overall":60},
+      {"club":"Go Ahead Eagles", "overall":60},
+      {"club":"Helmond Sport", "overall":60},
+      {"club":"Jong Ajax", "overall":60},
+      {"club":"Jong AZ", "overall":60},
+      {"club":"Jong FC Utrecht", "overall":60},
+      {"club":"Jong PSV", "overall":60},
+      {"club":"MVV Maastricht", "overall":60},
+      {"club":"N.E.C.", "overall":60},
+      {"club":"RKC Waalwijk", "overall":60},
+      {"club":"Roda JC", "overall":60},
+      {"club":"SC Cambuur", "overall":60},
+      {"club":"Sparta Rotteram", "overall":60}
+      ]}
+  ]}
