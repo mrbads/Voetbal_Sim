@@ -41,7 +41,7 @@ class Manager(object):
         print('Manager menu')
         print('Club: {} {}'.format(self.club.name, self.club.overall))
         print('League: {}'.format(self.club.league))
-        print('[1] Next game \n[2] Team \n[3] Board \n[4] Calender \n[5] Quit')
+        print('[1] Next game \n[2] Team \n[3] Board \n[4] Calender \n[5] Standings \n[6] Quit')
         option = int(input('Your choice: '))
         if option == 1:
             self.next_game()
@@ -52,6 +52,11 @@ class Manager(object):
             pass
         elif option == 4:
             self.calender()
+            self.menu()
+        elif option == 5:
+            name_sort = sorted(self.competition.standings, key=lambda tup: tup[0])
+            cur_standing = sorted(name_sort, key=lambda tup: tup[1], reverse=True)
+            print(cur_standing)
             self.menu()
         else:
             exit()
@@ -69,13 +74,10 @@ class Manager(object):
                 print('Round {}: {} Played'.format(i+1, played[i]))
             else:
                 print('Round {}: {}'.format(i+1, fixtures[i-len(played)]))
-        print("{}: {} Points".format(self.club.name, self.club.result))
-        print(self.competition.standings)
 
     def next_game(self):
         if self.fixtures != []:
             for game in self.fixtures[0]:
-                print(game)
                 home = Club(game[0])
                 away = Club(game[1])
                 teams = [home, away]
@@ -83,7 +85,7 @@ class Manager(object):
                 self.competition._update_standings(result)
                 if home.name == self.club.name or away.name == self.club.name:
                     self.played.append(game)
-                self.fixtures.pop(0)
+            self.fixtures.pop(0)
         else:
             print('End of the season')
             print('Matches played: {} Points: {}'.format(len(self.played), self.club.result))
