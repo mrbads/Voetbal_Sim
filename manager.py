@@ -38,7 +38,14 @@ class Manager(object):
         # -   board management
         # -   calender
         # -   quit
-        print('Manager menu')
+
+        print('  __  __                                     __  __')
+        print(' |  \/  | __ _ _ __   __ _  __ _  ___ _ __  |  \/  | ___ _ __  _   _')
+        print(" | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__| | |\/| |/ _ \ '_ \| | | |")
+        print(" | |  | | (_| | | | | (_| | (_| |  __/ |    | |  | |  __/ | | | |_| |")
+        print(" |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_|    |_|  |_|\___|_| |_|\__,_|")
+        print("                           |___/")
+
         print('Club: {} {}'.format(self.club.name, self.club.overall))
         print('League: {}'.format(self.club.league))
         print('[1] Next game \n[2] Team \n[3] Board \n[4] Calender \n[5] Standings \n[6] Quit')
