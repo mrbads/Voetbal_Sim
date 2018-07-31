@@ -60,23 +60,23 @@ class Simulation(object):
             result = random.choices(Simulation.outcomes, weights=chances)
 
         if result == [1]:
-            Simulation.win(home.name)
-            return 'home win'
+            return Simulation.win(home, away)
         elif result == [2]:
-            Simulation.draw()
-            return 'draw'
+            return Simulation.draw(home, away)
         elif result == [3]:
-            Simulation.loss(home.name)
-            return 'home loss'
+            return Simulation.loss(home, away)
 
-    def win(arg):
-        print('{} Wins!'.format(arg))
-        pass
+    def win(home, away):
+        home.result = 3
+        away.result = 0
+        return home, away
 
-    def draw():
-        print("It's a draw.")
-        pass
+    def draw(home, away):
+        home.result = 1
+        away.result = 1
+        return home, away
 
-    def loss(arg):
-        print('{} Losses!'.format(arg))
-        pass
+    def loss(home, away):
+        home.result = 0
+        away.result = 3
+        return home, away

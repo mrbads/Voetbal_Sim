@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import json
+
 # club file
 
 leagues = [
@@ -29,6 +31,7 @@ class Club(object):
         self.international_prestige = 0
         self.num_players = 0
         self.teams = 0
+        self.result = 0
         self._generate_league(name)
         self._generate_overall(name)
 

@@ -17,6 +17,7 @@ class Manager(object):
         self.league = league
         self.fixtures = []
         self.played = []
+        self.stats = {"Points: ": 0,"Wins: ": 0,"Draws: ": 0,"Losses: ": 0}
         self._generate_fixtures()
 
     def _generate_fixtures(self):
@@ -49,10 +50,15 @@ class Manager(object):
                 away = Club(match[1])
                 teams = [home, away]
                 result = Simulation.simulate(teams)
-                self.played.append([self.fixtures[0], result])
+                if result[0].name == self.club.name:
+                    self.club.result += result[0].result
+                else:
+                    self.club.result += result[1].result
+                self.played.append(self.fixtures[0])
                 self.fixtures.pop(0)
             else:
                 print('End of the season')
+                print('Matches played: {} Points: {}'.format(len(self.played), self.club.result))
             self.menu()
         elif option == 2:
             pass
@@ -69,9 +75,10 @@ class Manager(object):
         played = self.played
         for i in range(0, int(len(fixtures)+len(played))):
             if i in range(0, len(played)):
-                print('Round {}: {}'.format(i+1, played[i]))
+                print('Round {}: {} Played'.format(i+1, played[i]))
             else:
                 print('Round {}: {}'.format(i+1, fixtures[i-len(played)]))
+        print("{}: {} Points".format(self.club.name, self.club.result))
         # for round in played:
         #     print(round)
         # for round in fixtures:
