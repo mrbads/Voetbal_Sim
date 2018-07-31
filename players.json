@@ -511,5 +511,55 @@
   {"first_name":"Lugman", "last_name":"Bezzat", "age":20 , "overall":57 , "potential":68 , "club":"VVV-Venlo"}
   {"first_name":"Tijs", "last_name":"Te Duits", "age":18 , "overall":56 , "potential":72 , "club":"Excelsior"}
   {"first_name":"Emil", "last_name":"Jakobsen", "age":19 , "overall":52 , "potential":71 , "club":"VVV-Venlo"}
+  {"first_name":"Achille", "last_name":"Vaarnold", "age":21 , "overall":58 , "potential":63 , "club":"Almere City FC"}
+  {"first_name":"Adrian", "last_name":"Ramadani", "age":18 , "overall":51 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Anass", "last_name":"Ahannach", "age":19 , "overall":60 , "potential":66 , "club":"Almere City FC"}
+  {"first_name":"Arian", "last_name":"Sevok", "age":19 , "overall":51 , "potential":56 , "club":"Almere City FC"}
+  {"first_name":"Arsenio", "last_name":"Valpoort", "age":24 , "overall":60 , "potential":61 , "club":"Almere City FC"}
+  {"first_name":"Arthur", "last_name":"Feudjio", "age":19 , "overall":52 , "potential":57 , "club":"Almere City FC"}
+  {"first_name":"Bob", "last_name":"van Uden", "age":18 , "overall":52 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Calvin", "last_name":"Mac-Intosch", "age":27 , "overall":59 , "potential":62 , "club":"Almere City FC"}
+  {"first_name":"Charlie", "last_name":"Telfer", "age":21 , "overall":60 , "potential":66 , "club":"Almere City FC"}
+  {"first_name":"Chiel", "last_name":"Kramer", "age":25 , "overall":60 , "potential":60 , "club":"Almere City FC"}
+  {"first_name":"Damon", "last_name":"Mirani", "age":21 , "overall":65 , "potential":65 , "club":"Almere City FC"}
+  {"first_name":"Delvechio", "last_name":"Blackson", "age":22 , "overall":57 , "potential":60 , "club":"Almere City FC"}
+  {"first_name":"Dennis", "last_name":"van der Heijden", "age":20 , "overall":66 , "potential":66 , "club":"Almere City FC"}
+  {"first_name":"Dylan", "last_name":"Nieuwenhuijs", "age":22 , "overall":57 , "potential":57 , "club":"Almere City FC"}
+  {"first_name":"Ezra", "last_name":"Walian", "age":19 , "overall":63 , "potential":63 , "club":"Almere City FC"}
+  {"first_name":"Faris", "last_name":"Hammouti", "age":20 , "overall":55 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Gaston", "last_name":"Salasiwa", "age":30 , "overall":59 , "potential":60 , "club":"Almere City FC"}
+  {"first_name":"Huib", "last_name":"van Eijnsbergen", "age":18 , "overall":50 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"James", "last_name":"Efmorfidis", "age":21 , "overall":62 , "potential":68 , "club":"Almere City FC"}
+  {"first_name":"Javier", "last_name":"Vet", "age":23 , "overall":55 , "potential":58 , "club":"Almere City FC"}
+  {"first_name":"Jay", "last_name":"Winter", "age":18 , "overall":48 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Jeffrey", "last_name":"Rijsdijk", "age":29 , "overall":60 , "potential":63 , "club":"Almere City FC"}
+  {"first_name":"Jelle", "last_name":"Goselink", "age":17 , "overall":51 , "potential":56 , "club":"Almere City FC"}
+  {"first_name":"Jerge", "last_name":"Hoefdraad", "age":30 , "overall":61 , "potential":62 , "club":"Almere City FC"}
+  {"first_name":"Jerreau", "last_name":"Cairo", "age":19 , "overall":55 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Jesper", "last_name":"Vos", "age":18 , "overall":48 , "potential":52 , "club":"Almere City FC"}
+  {"first_name":"Josef", "last_name":"Kvida", "age":20 , "overall":56 , "potential":62 , "club":"Almere City FC"}
+  {"first_name":"Joshua", "last_name":"Smits", "age":24 , "overall":62 , "potential":63 , "club":"Almere City FC"}
+  {"first_name":"Joshua", "last_name":"Zimmerman", "age":16 , "overall":46 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Julian", "last_name":"Nak", "age":19 , "overall":50 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Kees", "last_name":"van Buuren", "age":30 , "overall":65 , "potential":67 , "club":"Almere City FC"}
+  {"first_name":"Kenneth", "last_name":"Aninkora", "age":18 , "overall":51 , "potential":56 , "club":"Almere City FC"}
+  {"first_name":"Khalid", "last_name":"Tadmine", "age":22 , "overall":61 , "potential":66 , "club":"Almere City FC"}
+  {"first_name":"Leeroy", "last_name":"Owusu", "age":20 , "overall":64 , "potential":71 , "club":"Almere City FC"}
+  {"first_name":"Mike", "last_name":"Grim", "age":21 , "overall":54 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Mink", "last_name":"Peeters", "age":19 , "overall":64 , "potential":71 , "club":"Almere City FC"}
+  {"first_name":"Miquel", "last_name":"Ramdas", "age":18 , "overall":50 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Mitchel", "last_name":"Bergkamp", "age":18 , "overall":49 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Nicky", "last_name":"van Hilten", "age":20 , "overall":52 , "potential":57 , "club":"Almere City FC"}
+  {"first_name":"Nigel", "last_name":"Olvira", "age":19 , "overall":53 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Radinio", "last_name":"Balker", "age":18 , "overall":52 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Ruggero", "last_name":"Mannes", "age":19 , "overall":47 , "potential":55 , "club":"Almere City FC"}
+  {"first_name":"Sam", "last_name":"Krant", "age":19 , "overall":57 , "potential":62 , "club":"Almere City FC"}
+  {"first_name":"Samet", "last_name":"Bulut", "age":21 , "overall":60 , "potential":66 , "club":"Almere City FC"}
+  {"first_name":"Sherjill", "last_name":"MacDonald", "age":32 , "overall":64 , "potential":64 , "club":"Almere City FC"}
+  {"first_name":"Silvester", "last_name":"van der Water", "age":20 , "overall":62 , "potential":68 , "club":"Almere City FC"}
+  {"first_name":"Stijn", "last_name":"Kelder", "age":18 , "overall":51 , "potential":56 , "club":"Almere City FC"}
+  {"first_name":"Stijn", "last_name":"Keller", "age":17 , "overall":54 , "potential":56 , "club":"Almere City FC"}
+  {"first_name":"Tarik", "last_name":"Evre", "age":21 , "overall":54 , "potential":59 , "club":"Almere City FC"}
+  {"first_name":"Tom", "last_name":"Overtoom", "age":26 , "overall":62 , "potential":62 , "club":"Almere City FC"}
 
   ]}
