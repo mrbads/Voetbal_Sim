@@ -28,7 +28,6 @@ class Competition(object):
         self.standings = list()
 
     def roster(self, league):
-        print(league[0])
         teams = []
         league = league[1]
         for club in league:

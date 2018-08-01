@@ -59,11 +59,13 @@ class Manager(object):
             pass
         elif option == 4:
             self.calender()
+            input('press enter to continue')
             self.menu()
         elif option == 5:
             name_sort = sorted(self.competition.standings, key=lambda tup: tup[0])
             cur_standing = sorted(name_sort, key=lambda tup: tup[1], reverse=True)
             print(cur_standing)
+            input('press enter to continue')
             self.menu()
         else:
             exit()
@@ -87,11 +89,12 @@ class Manager(object):
             for game in self.fixtures[0]:
                 home = Club(game[0])
                 away = Club(game[1])
+                if home.name == self.club.name or away.name == self.club.name:
+                    print(game)
+                    input('press enter to continue')
                 teams = [home, away]
                 result = Simulation.simulate(teams)
                 self.competition._update_standings(result)
-                if home.name == self.club.name or away.name == self.club.name:
-                    self.played.append(game)
             self.fixtures.pop(0)
         else:
             print('End of the season')
