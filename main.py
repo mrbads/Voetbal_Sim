@@ -20,8 +20,14 @@ leagues = [
 ]
 
 def welcome():
-    print('welcome to Voetbal_Sim')
-    pass
+    print(" __      __        _   _           _    _____ _")
+    print(" \ \    / /       | | | |         | |  / ____(_)")
+    print("  \ \  / /__   ___| |_| |__   __ _| | | (___  _ _ __ ___")
+    print("   \ \/ / _ \ / _ \ __| '_ \ / _` | |  \___ \| | '_ ` _ \ ")
+    print("    \  / (_) |  __/ |_| |_) | (_| | |  ____) | | | | | | |")
+    print("     \/ \___/ \___|\__|_.__/ \__,_|_| |_____/|_|_| |_| |_|")
+    print("")
+    print('welcome to Voetbal Sim')
 
 def menu():
     print('[1] New Game \n[2] Career mode \n[3] Info \n[4] Quit')
