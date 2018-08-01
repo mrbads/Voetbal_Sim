@@ -73,14 +73,18 @@ class Manager(object):
 
     def calender(self):
         fixtures = []
+        played = []
         for round in self.fixtures:
             for match in round:
                 if self.club.name in match:
                     fixtures.append(match)
-        played = self.played
+        for match in self.played:
+            if self.club.name in match[0]:
+                played.append(match)
+
         for i in range(0, int(len(fixtures)+len(played))):
             if i in range(0, len(played)):
-                print('Round {}: {} Played'.format(i+1, played[i]))
+                print('Round {}: {} {}'.format(i+1, played[i][0], played[i][1]))
             else:
                 print('Round {}: {}'.format(i+1, fixtures[i-len(played)]))
 
@@ -95,10 +99,10 @@ class Manager(object):
                 teams = [home, away]
                 result = Simulation.simulate(teams)
                 self.competition._update_standings(result)
+                self.played.append([(result[0].name, result[1].name), (result[0].result, result[1].result)])
             self.fixtures.pop(0)
         else:
             print('End of the season')
-            print('Matches played: {} Points: {}'.format(len(self.played), self.club.result))
 
 
         self.menu()
