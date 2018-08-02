@@ -49,7 +49,7 @@ class Main(object):
         elif option == 3:
             print('Info')
             print('Voetbal_Sim is a football simulator based upon fifa career mode.')
-            menu()
+            self.menu()
         else:
             exit()
 
