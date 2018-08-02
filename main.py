@@ -2,7 +2,7 @@
 
 import club
 from sim import Simulation
-from manager import Manager
+from loading import Load
 
 clubs = ['ADO Den Haag','Ajax','AZ','de Graafschap','Excelsior','FC Emmen','FC Groningen','FC Utrecht','Feyenoord',
         'Fortuna Sittard','Heracles Almelo','NAC Breda','PEC Zwolle','PSV','SC Heerenveen','Vitesse','VVV-Venlo','Willem II']
@@ -44,9 +44,8 @@ class Main(object):
             self.quick_match(teams)
             self.menu()
         elif option == 2:
-            print('Career mode')
-            manager = Manager('Ajax', clubs, leagues[0])
-            manager.menu()
+            load = Load()
+            load.create()
         elif option == 3:
             print('Info')
             print('Voetbal_Sim is a football simulator based upon fifa career mode.')

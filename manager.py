@@ -69,7 +69,6 @@ class Manager(object):
             self.menu()
         else:
             exit()
-        pass
 
     def calender(self):
         fixtures = []
