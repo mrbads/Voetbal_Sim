@@ -27,14 +27,8 @@ class Manager(object):
             self._generate_fixtures()
 
     def _generate_fixtures(self):
-        # fixtures = []
         schedule = self.competition.roster(self.league)
         self.fixtures = schedule
-        # for round in schedule:
-        #     for match in round:
-        #         if self.club.name in match:
-        #             fixtures.append(match)
-        # self.fixtures = fixtures
 
     def menu(self):
         # overview of all possible options:
@@ -110,6 +104,5 @@ class Manager(object):
             self.fixtures.pop(0)
         else:
             print('End of the season')
-
 
         self.menu()
