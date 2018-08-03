@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import pickle
+
 from manager import Manager
 
 # loading file
@@ -29,8 +31,13 @@ class Load(object):
         manager = Manager(club, teams, league)
         manager.menu()
 
-    def load(self, arg):
-        pass
+    def load(self):
+        with open('data.pickle', 'rb') as f:
+        # The protocol version used is detected automatically, so we do not
+        # have to specify it.
+            data = pickle.load(f)
+        manager = Manager(data.club.name, data.teams, data.league, data.fixtures, data.played, data.competition, new=False)
+        manager.menu()
 
     def team_selection(self):
         print('Choose your league: ')

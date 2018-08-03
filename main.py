@@ -45,7 +45,14 @@ class Main(object):
             self.menu()
         elif option == 2:
             load = Load()
-            load.create()
+            print('[1] - New Career \n[2] - Load Career')
+            option = int(input())
+            if option == 1:
+                load.create()
+            if option == 2:
+                load.load()
+            else:
+                self.menu()
         elif option == 3:
             print('Info')
             print('Voetbal_Sim is a football simulator based upon fifa career mode.')

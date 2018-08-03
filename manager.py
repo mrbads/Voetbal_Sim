@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import pickle
+
 from club import Club
 from competition import Competition
 from sim import Simulation
@@ -10,16 +12,19 @@ from sim import Simulation
 
 class Manager(object):
     """docstring for Manager."""
-    def __init__(self, club, teams, league):
+    def __init__(self, club, teams, league, fixtures=[], played=[], competition=Competition(), new=True):
         super(Manager, self).__init__()
         self.club = Club(club)
         self.teams = teams
         self.league = league
-        self.fixtures = []
-        self.played = []
+        self.fixtures = fixtures
+        self.played = played
         self.stats = {"Points: ": 0,"Wins: ": 0,"Draws: ": 0,"Losses: ": 0}
-        self.competition = Competition()
-        self._generate_fixtures()
+        self.competition = competition
+        self.new = new
+        print(self.new)
+        if self.new:
+            self._generate_fixtures()
 
     def _generate_fixtures(self):
         # fixtures = []
@@ -68,6 +73,9 @@ class Manager(object):
             input('press enter to continue')
             self.menu()
         else:
+            with open('data.pickle', 'wb') as f:
+                # Pickle the 'data' dictionary using the highest protocol available.
+                pickle.dump(self, f, pickle.HIGHEST_PROTOCOL)
             exit()
 
     def calender(self):
